@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "676532935433",
+    "project_id": "blood-wave-cc13f",
+    "storage_bucket": "blood-wave-cc13f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676532935433:android:54b9e1240b5e229366d1d8",
+        "android_client_info": {
+          "package_name": "com.example.blood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtGqgRGdKYN8BM193kUW3pgy8E0SL2PJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
