@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -40,7 +42,9 @@ class _WelcomeState extends State<Welcome> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 60, 100),
                 child: FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/LoginPage');
+                  },
                   child: Text(
                     '>>',
                     textAlign: TextAlign.center,
