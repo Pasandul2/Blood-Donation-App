@@ -22,7 +22,7 @@ class _WelcomeState extends State<Welcome> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                      'assets/background.jpg'), // Path to your background image
+                      'assets/background1.jpg'), // Path to your background image
                   fit: BoxFit.cover,
                 ),
               ),
@@ -67,7 +67,7 @@ class _WelcomeState extends State<Welcome> {
                 'Find A Blood Donor',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -79,14 +79,14 @@ class _WelcomeState extends State<Welcome> {
                 'Be A Blood Donor',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(260, 690, 0, 0),
+              padding: EdgeInsets.fromLTRB(225, 595, 0, 0),
               child: Text(
                 'Get Start',
                 textAlign: TextAlign.center,
