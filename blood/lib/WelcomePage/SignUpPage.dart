@@ -59,7 +59,6 @@ class _SignUpPageState extends State<SignUpPage> {
           },
         ),
       ),
-      
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -187,6 +186,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please confirm your password';
+                  } else if (value.length < 6) {
+                    return 'Password must be at least 6 characters';
                   } else if (value != _passwordController.text) {
                     return 'Passwords do not match';
                   }

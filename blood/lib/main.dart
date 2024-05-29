@@ -6,7 +6,6 @@ import 'package:blood/HomePage/MainPage.dart';
 import 'package:blood/HomePage/RequestBloodPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
 import 'package:blood/WelcomePage/SignUpPage.dart';
-import 'package:blood/WelcomePage/WelcomePage.dart';
 import 'package:blood/WelcomePage/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
