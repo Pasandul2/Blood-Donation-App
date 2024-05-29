@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_import
-
 import 'package:blood/HomePage/BecomeDonorPage.dart';
 import 'package:blood/HomePage/FindDonorPage.dart';
 import 'package:blood/HomePage/RequestBloodPage.dart';
@@ -11,7 +9,6 @@ import 'package:flutter/widgets.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
