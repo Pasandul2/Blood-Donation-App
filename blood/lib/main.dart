@@ -1,8 +1,19 @@
+// ignore_for_file: unused_import
+
+import 'package:blood/HomePage/BecomeDonorPage.dart';
+import 'package:blood/HomePage/FindDonorPage.dart';
+import 'package:blood/HomePage/MainPage.dart';
+import 'package:blood/HomePage/RequestBloodPage.dart';
+import 'package:blood/WelcomePage/LoginPage.dart';
+import 'package:blood/WelcomePage/SignUpPage.dart';
 import 'package:blood/WelcomePage/WelcomePage.dart';
 import 'package:blood/WelcomePage/welcome.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -33,7 +44,15 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Welcome()
+        home: Welcome(),
+        routes: {
+          '/LoginPage': (context) => LoginPage(),
+          '/SignUpPage': (context) => SignUpPage(),
+          '/BecomeDonorPage': (context) => BecomeDonorPage(),
+          '/FindDonorPage': (context) => BecomeDonorPage(),
+          '/MainPage': (context) => MainPage(),
+          '/RequestBloodPage': (context) => RequestBloodPage(),
+        }
         // home: const MyHomePage(title: 'Flutter Demo Home Page'),
         );
   }
