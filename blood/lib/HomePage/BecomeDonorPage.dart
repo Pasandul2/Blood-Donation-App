@@ -2,7 +2,7 @@ import 'package:blood/HomePage/MainPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
 import 'package:flutter/material.dart';
 
-// This is the main class for the Become Donor Page
+// Main class for the Become Donor Page
 class BecomeDonorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
