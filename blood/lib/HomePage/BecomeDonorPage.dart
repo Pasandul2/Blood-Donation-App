@@ -17,7 +17,7 @@ class BecomeDonorPage extends StatelessWidget {
         child: Column(
           children: [
             HeaderSection(), // Custom header section
-            // Form for donor details
+            DonorForm(), // Form for donor details
           ],
         ),
       ),
