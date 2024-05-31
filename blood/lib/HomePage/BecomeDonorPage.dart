@@ -149,7 +149,7 @@ class DonorForm extends StatefulWidget {
 }
 
 class _DonorFormState extends State<DonorForm> {
-  String _gender = 'Male';
+  String _gender = ;
   String _bloodGroup = 'A+';
   bool _isContactVisible = false;
 
