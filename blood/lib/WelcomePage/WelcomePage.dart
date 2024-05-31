@@ -21,13 +21,14 @@ class _WelcomePageState extends State<WelcomePage> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.width / 1.6,
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration:
+                      BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.width / 1,
                   decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 158, 11, 0),
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(70)),
                   ),
