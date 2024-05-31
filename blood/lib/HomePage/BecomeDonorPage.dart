@@ -47,7 +47,7 @@ class BecomeDonorPage extends StatelessWidget {
             // Map functionality can be added here
           } else if (index == 2) {
             showLogoutConfirmationDialog(
-                 // Show logout confirmation dialog
+                context); // Show logout confirmation dialog
           }
         },
       ),
