@@ -1,78 +1,107 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: unnecessary_import
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+// Welcome class represents a stateful widget for the welcome screen.
+class Welcome extends StatefulWidget {
+  const Welcome({super.key});
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<Welcome> createState() => _WelcomeState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+// _WelcomeState class manages the state of the Welcome widget.
+class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.width,
+    return Scaffold(
+      body: SafeArea(
         child: Stack(
           children: [
-            Stack(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.width / 1.6,
-                  decoration:
-                      BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.width / 1,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 158, 11, 0),
-                    borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(70)),
-                  ),
-                  child: Center(
-                    child: Image.asset(
-                      "assets/image1.png",
-                      scale: 0.35,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width / 1,
-                padding: EdgeInsets.only(top: 40, bottom: 30),
-                decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(70),
-                    )),
-                child: Column(
-                  children: [
-                    Text(
-                      "Blood Donation Application",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1,
-                        wordSpacing: 2,
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child: Text("aaaaaaaaaaaaaaaaaaaaaaa"),
-                    )
-                  ],
+            // Background image container
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/background1.jpg'), // Path to your background image
+                  fit: BoxFit.cover,
                 ),
               ),
-            )
+              child: Center(
+                child: Text(
+                  'Blood Wave',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            // FloatingActionButton to navigate to the login page
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 60, 100),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/LoginPage'); // Navigate to the login page
+                  },
+                  child: Text(
+                    '>>',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 34,
+                      color: Color.fromARGB(255, 184, 49, 49),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
+                ),
+              ),
+            ),
+            // Text elements with different messages
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 85, 0, 0),
+              child: Text(
+                'Find A Blood Donor',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 115, 0, 0),
+              child: Text(
+                'Be A Blood Donor',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // "Get Start" text
+            Container(
+              padding: EdgeInsets.fromLTRB(225, 595, 0, 0),
+              child: Text(
+                'Get Start',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),

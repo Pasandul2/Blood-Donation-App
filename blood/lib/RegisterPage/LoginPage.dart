@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController _passwordController = TextEditingController();
   // ignore: unused_field
   final FirebaseService _auth = FirebaseService();
-  String _errorText = ''; // Error message text
+  String _errorText = ''; //Error message
 
   @override
   Widget build(BuildContext context) {

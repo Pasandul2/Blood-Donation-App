@@ -2,8 +2,8 @@ import 'package:blood/HomePage/MainPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
 import 'package:flutter/material.dart';
 
-
 // Main class for the Become Donor Page
+
 
 class BecomeDonorPage extends StatelessWidget {
   @override
@@ -25,6 +25,7 @@ class BecomeDonorPage extends StatelessWidget {
             DonorForm(), // Form for donor details
 
 
+
           ],
         ),
       ),
@@ -32,9 +33,7 @@ class BecomeDonorPage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
 
-            icon: Icon(
-              Icons.home,
-            ),
+            icon: Icon(Icons.home),
 
             label: 'Home',
           ),
@@ -61,14 +60,17 @@ class BecomeDonorPage extends StatelessWidget {
             // Map functionality can be added here
 
           } else if (index == 2) {
-            showLogoutConfirmationDialog(context);
-          } else {}
+            showLogoutConfirmationDialog(
+                context); // Show logout confirmation dialog
+          }
         },
       ),
     );
   }
 }
 
+
+// Function to show the logout confirmation dialog
 
 void showLogoutConfirmationDialog(BuildContext context) {
   showDialog(
@@ -94,12 +96,13 @@ void showLogoutConfirmationDialog(BuildContext context) {
               // Add your logout logic here
               // For example, navigate to the login screen or clear user data
 
+
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
 
-                        LoginPage()), // Replace with your login page
+                        LoginPage()), // Navigate to login page
               );
             },
           ),
@@ -109,6 +112,7 @@ void showLogoutConfirmationDialog(BuildContext context) {
   );
 }
 
+// Custom header section widget
 
 class HeaderSection extends StatelessWidget {
   @override
