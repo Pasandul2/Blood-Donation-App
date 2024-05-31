@@ -1,24 +1,37 @@
+// This class represents the page where users can request blood.
+
 import 'package:blood/HomePage/MainPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 
 class RequestBloodPage extends StatefulWidget {
   @override
   _RequestBloodPageState createState() => _RequestBloodPageState();
 }
 
+
+// This class represents the state of the RequestBloodPage.
 class _RequestBloodPageState extends State<RequestBloodPage> {
+  // Controller for the date input field.
   final TextEditingController _dateController = TextEditingController();
+  // Initial values for blood group, units, and contact visibility.
+
   String _bloodGroup = 'A+';
   int _units = 1;
   bool _isContactVisible = false;
+
+
+  // Dispose of the controller when the state is disposed.
 
   @override
   void dispose() {
     _dateController.dispose();
     super.dispose();
   }
+
+  // Method to select a date.
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -34,6 +47,9 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
     }
   }
 
+
+  // Build method for the UI.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,12 +61,19 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+            // Header section widget.
             HeaderSection(),
+            // Blood request form widget.
+
             RequestBloodForm(
               dateController: _dateController,
               bloodGroup: _bloodGroup,
               units: _units,
               isContactVisible: _isContactVisible,
+
+              // Callbacks for form field changes.
+
               onBloodGroupChanged: (value) {
                 setState(() {
                   _bloodGroup = value;
@@ -71,6 +94,9 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
           ],
         ),
       ),
+
+      // Bottom navigation bar.
+
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -91,12 +117,18 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
         currentIndex: 0,
         onTap: (index) {
           if (index == 0) {
+
+            // Navigate to the main page.
+
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => MainPage()),
             );
           } else if (index == 1) {
+            // Handle map option.
           } else if (index == 2) {
+            // Show logout confirmation dialog.
+
             showLogoutConfirmationDialog(context);
           } else {}
         },
@@ -105,12 +137,16 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
   }
 }
 
+// Widget for showing logout confirmation dialog.
+
 void showLogoutConfirmationDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Log Out'),
+
+        title: Text('Log Out'), // Display logout confirmation.
+
         content: Text('Are you sure you want to log out?'),
         actions: [
           TextButton(
@@ -139,10 +175,16 @@ void showLogoutConfirmationDialog(BuildContext context) {
   );
 }
 
+
+// Widget for the header section.
+
 class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
+      // Styling for the header section.
+
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -220,6 +262,9 @@ class RequestBloodForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
+      // Styling and functionality for the blood group chip.
+
           TextField(
             decoration: InputDecoration(
               labelText: 'Name',
