@@ -77,8 +77,7 @@ void showLogoutConfirmationDialog(BuildContext context) {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>
-                        LoginPage()), // Navigate to login page
+                    builder: (context) => ()), // Navigate to login page
               );
             },
           ),
