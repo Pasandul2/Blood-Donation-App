@@ -2,7 +2,6 @@ import 'package:blood/HomePage/BecomeDonorPage.dart';
 import 'package:blood/HomePage/FindDonorPage.dart';
 import 'package:blood/HomePage/RequestBloodPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
