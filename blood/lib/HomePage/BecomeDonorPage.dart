@@ -2,10 +2,16 @@ import 'package:blood/HomePage/MainPage.dart';
 import 'package:blood/WelcomePage/LoginPage.dart';
 import 'package:flutter/material.dart';
 
+
+// Main class for the Become Donor Page
+
 class BecomeDonorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      // AppBar with no visible elements
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -14,17 +20,22 @@ class BecomeDonorPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderSection(),
-            DonorForm(),
+
+            HeaderSection(), // Custom header section
+            DonorForm(), // Form for donor details
+
+
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
+
             icon: Icon(
               Icons.home,
             ),
+
             label: 'Home',
           ),
           BottomNavigationBarItem(
@@ -36,7 +47,9 @@ class BecomeDonorPage extends StatelessWidget {
             label: 'Log Out',
           ),
         ],
-        currentIndex: 0,
+
+        currentIndex: 0, // Default selected index
+
         onTap: (index) {
           if (index == 0) {
             Navigator.push(
@@ -44,6 +57,9 @@ class BecomeDonorPage extends StatelessWidget {
               MaterialPageRoute(builder: (context) => MainPage()),
             );
           } else if (index == 1) {
+
+            // Map functionality can be added here
+
           } else if (index == 2) {
             showLogoutConfirmationDialog(context);
           } else {}
@@ -52,6 +68,7 @@ class BecomeDonorPage extends StatelessWidget {
     );
   }
 }
+
 
 void showLogoutConfirmationDialog(BuildContext context) {
   showDialog(
@@ -64,19 +81,24 @@ void showLogoutConfirmationDialog(BuildContext context) {
           TextButton(
             child: Text('No'),
             onPressed: () {
-              Navigator.of(context).pop();
+
+              Navigator.of(context).pop(); // Close the dialog
+
             },
           ),
           TextButton(
             child: Text('Yes'),
             onPressed: () {
               Navigator.of(context).pop(); // Close the dialog
+
               // Add your logout logic here
               // For example, navigate to the login screen or clear user data
+
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
+
                         LoginPage()), // Replace with your login page
               );
             },
@@ -86,6 +108,7 @@ void showLogoutConfirmationDialog(BuildContext context) {
     },
   );
 }
+
 
 class HeaderSection extends StatelessWidget {
   @override
@@ -139,6 +162,8 @@ class HeaderSection extends StatelessWidget {
     );
   }
 }
+
+// Form widget to collect donor details
 
 class DonorForm extends StatefulWidget {
   @override
@@ -319,6 +344,9 @@ class _DonorFormState extends State<DonorForm> {
     );
   }
 }
+
+
+// Custom ChoiceChip widget for blood group selection
 
 class BloodGroupChip extends StatelessWidget {
   final String label;
