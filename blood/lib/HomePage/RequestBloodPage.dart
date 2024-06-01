@@ -44,7 +44,7 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0, //elevate
+        elevation: 0,
         toolbarHeight: 0,
       ),
       body: SingleChildScrollView(
@@ -86,7 +86,7 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
             icon: Icon(
               Icons.home,
             ),
-            label: 'Home', //label
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
@@ -120,10 +120,10 @@ class _RequestBloodPageState extends State<RequestBloodPage> {
 // Widget for showing logout confirmation dialog.
 void showLogoutConfirmationDialog(BuildContext context) {
   showDialog(
-    context: context, //context
+    context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Log Out'),
+        title: Text('Log Out'), // Display logout confirmation.
         content: Text('Are you sure you want to log out?'),
         actions: [
           TextButton(
